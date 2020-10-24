@@ -1,0 +1,25 @@
+{% extends 'layouts/default.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="/public/resources/fotorama/fotorama.css">
+    {{ parent() }}
+{% endblock %}
+
+{% block js %}
+    <script src="/public/resources/js/jquery.min.js"></script>
+    <script src="/public/resources/fotorama/fotorama.js"></script>
+    <script src="/public/resources/js/album.js"></script>
+{% endblock %}
+
+{% block body_id %}albums{% endblock %}
+{% block body_class %}single{% endblock %}
+{% block head_title %}{{ 'album'|trans }} «{{ name }}» | {{ parent() }}{% endblock %}
+{% block page_title %}{{ 'album'|trans }} «{{ name }}»{% endblock %}
+
+{% block content %}
+    <div class="fotorama">
+        {% for image in images %}
+            <img src="/public/resources/img/albums/{{ slug }}/{{ image }}" alt="">
+        {% endfor %}
+    </div>
+{% endblock %}

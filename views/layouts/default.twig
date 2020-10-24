@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{ current_lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+
+    {% block css %}
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic">
+    <link rel="stylesheet" href="/public/resources/css/screen.css">
+    {% endblock %}
+
+    <script src="//vk.com/js/api/openapi.js?105"></script>
+
+    {% block head %}{% endblock %}
+
+    <title>{% block head_title %}{{ 'website_title'|trans }}{% endblock %}</title>
+</head>
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+    {% include 'partials/nav.twig' %}
+
+    {% if current_uri != '/' %}
+    <section class="page">
+        <h1 class="page-title">{% block page_title %}{% endblock %}</h1>
+    {% endif %}
+        {% block content %}{% endblock %}
+    {% if current_uri != '/' %}
+    </section>
+    {% endif %}
+
+    {% if current_uri != '/sponsors' %}
+    <div class="social-btns">
+        {% include 'partials/twitter-share.twig' %}
+        {% include 'partials/vk-like.twig' %}
+        {% include 'partials/fb-like.twig' %}
+        {% include 'partials/mailru-like.twig' %}
+        {% include 'partials/ok-like.twig' %}
+    </div>
+    {% endif %}
+
+    {% include 'partials/footer.twig' %}
+    {% block js %}{% endblock %}
+</body>
+</html>

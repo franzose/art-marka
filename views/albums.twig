@@ -1,0 +1,23 @@
+{% extends 'layouts/default.twig' %}
+
+{% block body_id %}albums{% endblock %}
+{% block head_title %}{{ 'albums'|trans }} | {{ parent() }}{% endblock %}
+{% block page_title %}{{ 'albums'|trans }}{% endblock %}
+
+{% block content %}
+    <article>
+        <p>{{ 'albums_notice'|trans|raw }}</p>
+    </article>
+    <ul class="albums__list">
+        {% for uri, name in albums %}
+            <li class="albums__item">
+                <a class="albums__link" href="/album/{{ uri }}">
+                    <div class="albums__thumb-container">
+                        <img class="albums__thumb" src="/public/resources/img/albums/{{ uri }}/thumb.jpg" alt="{{ name }}">
+                    </div>
+                    <span class="albums__title">{{ name }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+* { margin:0; padding:0; line-height:1.4; }
+html { position:relative; min-height:100%; }
+body {
+    min-width:960px; margin-bottom:7em; padding:0 4.5em;
+    font:16px/24px 'PT Sans', sans-serif;
+    color:#191917;
+}
+
+h1, h2, h3 { font-weight:normal; }
+h1, h2 { margin-bottom:0.25em; }
+h4 {
+    margin-bottom:0.5em;
+    text-transform:uppercase;
+}
+
+h1 { font-size:4em; }
+h2 { font-size:3em; }
+h3 { font-size:2em; }
+
+p { margin-bottom:1em; }
+ul { list-style:none; }
+p + ul { margin-top:-1em; margin-bottom:1em; }
+a {
+    color:#3892CF;
+    &:hover, &:visited:hover { color:#2277BD; }
+    &:visited { color:#81B2D3; }
+}
+
+.page {
+    > article {
+        width:760px;
+
+        > .lead { margin-bottom:3em; }
+
+        p {
+            margin-bottom:1em;
+            & + ul { margin-top:-1em; }
+        }
+
+        ul {
+            margin:0 0 1em 1em;
+
+            [lang="ru"] & > li:before { content:'— '; }
+            [lang="en"] & { margin-left:1.15em; }
+            [lang="en"] & > li { list-style:circle; }
+        }
+    }
+}
+
+#albums.single .page-title { color:#888; }
+
+.fotorama { background:image-url('fotorama.png'); }
+.fotorama__wrap { margin:auto; }
+.fotorama__img { box-shadow:0 0 10px #000 !important; }
+.fotorama__arr--next, .fotorama__fullscreen-icon { right:15px; }
+
+@include retina() {
+    .fotorama { background:image-url('fotorama_@2X.png'); background-size:180px; }
+}
+
+.btn {
+    display:inline-block;
+    padding:0.5em; box-sizing:border-box;
+    text-transform:uppercase; border-radius:4px;
+}
+
+a.btn { color:#fff; text-decoration:none; &:hover { color:#fff; } }
+
+.social-btns { margin-top:4em; overflow:hidden; }
+#twitter-widget-0 { position:absolute; margin-top:1px; }
+#vk-like, .fb-like, #mailru-like { float:left; }
+#vk-like { margin:2px 2em 0 125px; }
+.fb-like { margin-right:2em; }
+#mailru-like, #ok-like { margin-top:2px; }
+#mailru-like { width:135px; }

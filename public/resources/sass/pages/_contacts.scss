@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.vcard, .business-info {
+    display:inline-block; vertical-align:top;
+    padding-top:0.5em; padding-bottom:0.5em;
+}
+
+.vcard {
+    margin-right:4.5em;
+
+    > .fn { font-size:1.5em; font-weight:bold; text-transform:uppercase; }
+    > .tel-sec { margin-bottom:0.5em; }
+    > .adr {
+        > .locality:before { display:block; content:''; }
+    }
+
+    .tel { font-weight:bold; }
+}
+
+.business-info {
+    padding-left:5.5em;
+    border-left:1px solid #eee;
+}
+
+.business-info__item {
+    margin-bottom:0.75em;
+
+    > h4 { margin:0; }
+    > ul {
+        font-size:0.85em;
+
+        > li {
+            text-indent:-1.1em;
+            &:before { content:'— '; }
+        }
+    }
+}
+
+.works {
+    width:820px; margin:4em 0 0 -5px;
+
+    > img { display:inline-block; margin:5px; }
+}

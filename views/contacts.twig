@@ -1,0 +1,63 @@
+{% extends 'layouts/default.twig' %}
+
+{% block head %}
+    <link rel="profile" href="http://microformats.org/profile/hcard">
+{% endblock %}
+
+{% block head_title %}{{ 'page_title_contacts'|trans }} | {{ parent() }}{% endblock %}
+{% block page_title %}{{ 'page_title_contacts'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="vcard">
+        <div class="fn">{{ 'author_name'|trans }}</div>
+        <a class="url org" href="http://s-marka.jimdo.com">{{ 'company_name'|trans|raw }}</a>
+        <div class="email-sec">{{ 'email'|trans }} <a class="email" href="mailto:s_marka@list.ru">s_marka@list.ru</a></div>
+        <div class="tel-sec">
+            <div>{{ 'phone'|trans }} <span class="tel">+7 (4242) 750-769</span></div>
+            <span class="type">{{ 'phone_type'|trans }}</span> <span class="tel">+7 914 756-95-69</span>
+        </div>
+    </div>
+    <aside class="business-info">
+        <div class="business-info__item">
+            <h4><a href="http://s-marka.jimdo.com/реклама">{{ 'business_heading_1'|trans }}</a></h4>
+            <ul>
+                <li>{{ 'business_1'|trans }}</li>
+                <li>{{ 'business_2'|trans }}</li>
+                <li>{{ 'business_3'|trans }}</li>
+            </ul>
+        </div>
+        <div class="business-info__item">
+            <h4><a href="http://s-marka.jimdo.com/полиграфия">{{ 'business_heading_2'|trans }}</a></h4>
+            <ul>
+                <li>{{ 'business_4'|trans }}</li>
+                <li>{{ 'business_5'|trans }}</li>
+                <li>{{ 'business_6'|trans }}</li>
+            </ul>
+        </div>
+        <div class="business-info__item">
+            <h4><a href="http://s-marka.jimdo.com/знаки-лого">{{ 'business_heading_3'|trans }}</a></h4>
+            <ul>
+                <li>{{ 'business_7'|trans }}</li>
+            </ul>
+        </div>
+        <div class="business-info__item">
+            <h4><a href="http://s-marka.jimdo.com/магниты">{{ 'business_heading_4'|trans }}</a></h4>
+            <ul>
+                <li>{{ 'business_8'|trans }}</li>
+                <li>{{ 'business_9'|trans }}</li>
+            </ul>
+        </div>
+    </aside>
+    <div class="works">
+        <img src="/public/resources/img/contacts/gerb.png" alt="{{ 'contacts_img_1'|trans }}">
+        <img src="/public/resources/img/contacts/105-5.png" alt="{{ 'contacts_img_2'|trans }}">
+        <img src="/public/resources/img/contacts/astv.png" alt="{{ 'contacts_img_3'|trans }}">
+        <img src="/public/resources/img/contacts/dalsatcom.png" alt="{{ 'contacts_img_4'|trans }}">
+        <img src="/public/resources/img/contacts/gorod.png" alt="{{ 'contacts_img_5'|trans }}">
+        <img src="/public/resources/img/contacts/kriljon.png" alt="{{ 'contacts_img_6'|trans }}">
+        <img src="/public/resources/img/contacts/master-bill.png" alt="{{ 'contacts_img_7'|trans }}">
+        <img src="/public/resources/img/contacts/ostrova.png" alt="{{ 'contacts_img_8'|trans }}">
+        <img src="/public/resources/img/contacts/sakhalin-1.png" alt="{{ 'contacts_img_9'|trans }}">
+        <img src="/public/resources/img/contacts/arena-city.png" alt="{{ 'contacts_img_10'|trans }}">
+    </div>
+{% endblock %}

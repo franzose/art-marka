@@ -1,0 +1,19 @@
+{% extends 'layouts/default.twig' %}
+
+{% block body_id %}index{% endblock %}
+
+{% block content %}
+    <h1 class="index__exhibition">{{ 'exhibition_title'|trans }}</h1>
+    <p class="index__tag">{{ 'author_name'|trans }}. {{ 'author_prof'|trans }}</p>
+    <p class="index__tag">{{ 'exhibition_tag'|trans }}</p>
+    <p class="index__date">
+        <strong class="index__date-period">{{ 'exhibition_date'|trans }}</strong><br>
+        {{ 'art_museum'|trans }} <em>({{ 'exhibition_place'|trans }})</em><br>
+        {{ 'exhibition_address'|trans }}<br>
+
+    </p>
+    <div class="index__actions">
+        <a href="/albums" class="index__go-online">{{ 'view_online'|trans }}</a>
+        <a href="/bio" class="index__more">{{ 'page_title_bio'|trans }}</a>
+    </div>
+{% endblock %}

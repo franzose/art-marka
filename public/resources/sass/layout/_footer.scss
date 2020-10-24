@@ -1,0 +1,17 @@
+.site-footer {
+    position:absolute; left:0; bottom:0;
+    width:400px; padding:2em 4.5em; box-sizing:border-box;
+
+    > p {
+        margin:0;
+        font-size:0.75em; color:#777;
+
+        #index > & { color:#ccc; }
+
+        > a {
+            color:#777; &:hover { color:#333; }
+
+            #index > & { color:#ccc; &:hover { color:#fff; } }
+        }
+    }
+}

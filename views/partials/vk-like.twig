@@ -1,0 +1,13 @@
+<div id="vk-like"></div>
+<script src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        VK.init({apiId: 4201599, onlyWidgets: true});
+        document.getElementById('vk-like').innerHTML = VK.Share.button({
+            type: "round_count",
+            url: "http://art-marka.ru{{ current_uri }}",
+            title: "{{ 'website_title'|trans }}",
+            image: "http://art-marka.ru/public/resources/img/author-large-dark.jpg"
+        });
+    }
+</script>

@@ -1,0 +1,134 @@
+{% extends 'layouts/default.twig' %}
+
+{% block js %}
+    <script src="/public/resources/js/jquery.min.js"></script>
+    <script src="/public/resources/js/bjqs.js"></script>
+    <script src="/public/resources/js/bio.js"></script>
+{% endblock %}
+
+{% block head_title %}{{ 'page_title_bio'|trans }} | {{ parent() }}{% endblock %}
+{% block page_title %}{{ 'page_title_bio'|trans }}{% endblock %}
+
+{% block content %}
+    <article class="bio">
+        <p>{{ 'bio_p_lead'|trans }}</p>
+
+        {% set img_path = '/public/resources/img/about/quote/' %}
+        {% set images = ['korova', 'sneg', 'zayats', 'ryba'] %}
+        <div id="quote">
+            <blockquote class="bio__quote">{{ 'bio_quote'|trans|raw }}</blockquote>
+            <div class="bjqs-slides">
+                <ul class="bjqs">
+                    {% for idx, image in images %}
+                    <li class="bio__quote-img-{{ idx }}"></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <section class="bio__section">
+            <h2>{{ 'bio_heading_1'|trans }}</h2>
+
+            <figure class="bio__figure">
+                <img class="bio__figimg" src="/public/resources/img/bio/korsakov/korsakov.jpg" alt="">
+                <figcaption class="bio__figcaption">{{ 'bio_caption_1'|trans|raw }}</figcaption>
+            </figure>
+            <aside class="bio__related">
+                <figure class="bio__related__figure">
+                    <img class="bio__figimg" src="/public/resources/img/bio/korsakov/nosiki.jpg" alt="">
+                    <figcaption class="bio__related__figcaption">{{ 'bio_caption_2'|trans }}</figcaption>
+                </figure>
+            </aside>
+            <aside class="bio__related-horizontal">
+                <figure class="bio__related__figure figure-extended">
+                    <img class="bio__figimg" src="/public/resources/img/bio/korsakov/entrance.jpg" alt="">
+                    <img class="bio__figimg" src="/public/resources/img/bio/korsakov/wall.jpg" alt="">
+                    <figcaption class="bio__related__figcaption">{{ 'bio_caption_3'|trans }}</figcaption>
+                </figure>
+            </aside>
+        </section>
+
+        <section class="bio__section">
+            <h2>{{ 'bio_heading_2'|trans }}</h2>
+
+            <figure class="bio__figure">
+                <img class="bio__figimg" src="/public/resources/img/bio/irkutsk/irkutsk.jpg" alt="">
+                <figcaption class="bio__figcaption">{{ 'bio_caption_5'|trans|raw }}</figcaption>
+            </figure>
+            <aside class="bio__related">
+                <figure class="bio__related__figure">
+                    <img class="bio__figimg" src="/public/resources/img/bio/irkutsk/img_0002.jpg" alt="">
+                    <figcaption class="bio__related__figcaption">{{ 'bio_caption_6'|trans }}</figcaption>
+                </figure>
+            </aside>
+            <aside class="bio__related-horizontal">
+                <figure class="bio__related__figure">
+                    <img class="bio__figimg" src="/public/resources/img/bio/irkutsk/img_0003.jpg" alt="">
+                    <figcaption class="bio__related__figcaption">{{ 'bio_caption_7'|trans }}</figcaption>
+                </figure>
+                <figure class="bio__related__figure">
+                    <img class="bio__figimg" src="/public/resources/img/bio/irkutsk/img_0005.jpg" alt="">
+                    <figcaption class="bio__related__figcaption">{{ 'bio_caption_8'|trans }}</figcaption>
+                </figure>
+                <figure class="bio__related__figure">
+                    <img class="bio__figimg" src="/public/resources/img/bio/irkutsk/img_0006.jpg" alt="">
+                    <figcaption class="bio__related__figcaption">{{ 'bio_caption_9'|trans }}</figcaption>
+                </figure>
+            </aside>
+        </section>
+
+        <section class="bio__section">
+            <h2>{{ 'bio_heading_3'|trans }}</h2>
+
+            <figure class="bio__figure">
+                <img class="bio__figimg" src="/public/resources/img/bio/ys/print-service.jpg" alt="">
+                <figcaption class="bio__figcaption">{{ 'bio_caption_10'|trans|raw }}</figcaption>
+            </figure>
+            <aside class="bio__related">
+                <figure class="bio__related__figure">
+                    <img class="bio__figimg" src="/public/resources/img/bio/ys/at-work.jpg" alt="">
+                    <figcaption class="bio__related__figcaption">{{ 'bio_caption_11'|trans|raw }}</figcaption>
+                </figure>
+            </aside>
+        </section>
+
+        <section class="bio__section">
+            <h2>{{ 'author_prof'|trans }}</h2>
+            <p>{{ 'bio_exh_para'|trans }}</p>
+            <ul>
+                <li>
+                    «<a href="http://sakhalin.name/Photoexhibition/?album=7784&b_id=61302">{{ 'bio_exh_1'|trans }}</a>»
+                    ({{ 'art_museum'|trans }}), 2010
+                </li>
+                <li>
+                    «<a href="http://citysakh.ru/news/18702/">{{ 'bio_exh_2'|trans }}</a>»
+                    {{ 'bio_exh_place_2'|trans }}, 2011
+                </li>
+                <li>«{{ 'bio_exh_3'|trans }}» ({{ 'art_museum'|trans }}), 2012</li>
+                <li>«{{ 'bio_exh_4'|trans }}» ({{ 'bio_exh_place_3'|trans }}), 2013</li>
+                <li>
+                    «<a href="http://thebestofrussia.ru/ru/photos/special">Best of Russia ’13</a>»
+                    {{ 'bio_exh_5'|trans }} «<a href="http://thebestofrussia.ru/ru/photo/131438">{{ 'bio_tbor_nom'|trans }}</a>»
+                    ({{ 'bio_exh_place_4'|trans }}), 2013
+                </li>
+            </ul>
+
+            <p>{{ 'bio_albums_para'|trans }}</p>
+            <ul>
+                <li>«{{ 'bio_album_1'|trans }}», 2010</li>
+                <li>«{{ 'bio_album_1'|trans }}», {{ 'bio_album_1_2ed'|trans }}, 2011</li>
+                <li>«{{ 'bio_album_2'|trans }}», 2012</li>
+                <li>«{{ 'bio_exh_4'|trans }}», 2013</li>
+                <li>«Best of Russia ’13», 2013</li>
+            </ul>
+
+            <p>{{ 'bio_works_para'|trans }}</p>
+            <ul>
+                <li><a href="http://photos.sakhalin.name/album/49729">http://photos.sakhalin.name/album/49729</a></li>
+                <li><a href="http://photos.sakhalin.name/album/52076">http://photos.sakhalin.name/album/52076</a></li>
+                <li><a href="http://photos.sakhalin.name/album/52300">http://photos.sakhalin.name/album/52300</a></li>
+                <li><a href="http://s-marka.jimdo.com">http://s-marka.jimdo.com</a></li>
+            </ul>
+        </section>
+    </article>
+{% endblock %}

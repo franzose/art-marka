@@ -1,0 +1,34 @@
+{% extends 'layouts/default.twig' %}
+
+{% block head_title %}{{ 'page_title_sponsors'|trans }} | {{ parent() }}{% endblock %}
+{% block page_title %}{{ 'page_title_sponsors'|trans }}{% endblock %}
+
+{% block content %}
+    <article class="sponsors">
+        {{ 'sponsors_thanks_text'|trans|raw }}
+    </article>
+
+    <div class="sponsors-list">
+        <h4>{{ 'sponsors_heading_1'|trans }}</h4>
+        <a class="sponsors__link" href="http://masterbill.net">
+            <img class="sponsors__img" src="/public/resources/img/sponsors/masterbill.png" alt="Мастер Билл">
+            {{ 'sponsor_1'|trans|raw }}
+        </a>
+        <a class="sponsors__link" href="http://www.sakhalin.biz/companies/4923/dir/194/276/list3/">
+            <img class="sponsors__img" src="/public/resources/img/sponsors/simvol.png" alt="Символ ДВ-Сахалин">
+            {{ 'sponsor_2'|trans|raw }}
+        </a>
+    </div>
+
+    <div class="sponsors-list">
+        <h4>{{ 'sponsors_heading_2'|trans }}</h4>
+        <a class="sponsors__link" href="http://astv.ru">
+            <img class="sponsors__img" src="/public/resources/img/sponsors/astv.jpg" alt="АСТВ">
+            {{ 'sponsor_3'|trans|raw }}
+        </a>
+        <a class="sponsors__link" href="http://citysakh.ru">
+            <img class="sponsors__img" src="/public/resources/img/sponsors/citysakh.png" alt="Ситисах">
+            {{ 'sponsor_4'|trans|raw }}
+        </a>
+    </div>
+{% endblock %}

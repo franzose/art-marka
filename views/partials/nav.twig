@@ -1,0 +1,36 @@
+{% set links = {
+'/'         : 'page_title_home'|trans,
+'/albums'   : 'page_title_albums'|trans,
+'/bio'      : 'page_title_bio'|trans,
+'/contacts' : 'page_title_contacts'|trans,
+'/sponsors' : 'page_title_sponsors'|trans
+} %}
+<nav class="site-nav">
+    <ul>
+        <li class="site-nav__logo">
+            {% if current_uri == '/' %}
+            <img class="site-nav__logo-img" src="/public/resources/img/logo.png" alt="logo">
+            {% else %}
+            <a class="site-nav__link" href="/">
+                <img class="site-nav__logo-img" src="/public/resources/img/logo.png" alt="logo">
+            </a>
+            {% endif %}
+        </li>
+        {% for uri, txt in links %}
+            {% if uri in ['/albums', '/bio'] and current_uri == '/' %}
+            {% else %}
+                {% if current_uri == uri %}
+                <li class="site-nav__item active"><span>{{ txt }}</span></li>
+                {% else %}
+                <li class="site-nav__item"><a class="site-nav__link" href="{{ uri }}">{{ txt }}</a></li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        <li class="site-nav__item lang-item lang-item-ru{% if current_lang == 'ru' %} active{% endif %}">
+            <a class="site-nav__link lang-link link-ru" href="/lang/ru">русский</a>
+        </li>
+        <li class="site-nav__item lang-item lang-item-en{% if current_lang == 'en' %} active{% endif %}">
+            <a class="site-nav__link lang-link link-en" href="/lang/en">english</a>
+        </li>
+    </ul>
+</nav>

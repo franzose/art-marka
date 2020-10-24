@@ -1,0 +1,53 @@
+$b: '.index';
+$bid: '#index';
+$btn-online-color: #68a234;
+$btn-online-hover-color: lighten($btn-online-color, 5%);
+$date-border: 1px solid rgba(255,255,255,0.2);
+
+
+
+#{$bid} { color:#fff; background:image-url('author-large-dark.jpg') 0 0 no-repeat; background-size:1600px; }
+#{$b}__exhibition {
+    margin:0;
+    font-size:5em; text-shadow:0 0 5px #333;
+}
+
+#{$b}__tag {
+    margin:0;
+    color:#aaa; text-transform:uppercase;
+}
+
+#{$b}__date {
+    width:420px; margin:2em 0 5em -2em; padding:0.75em 2em;
+    border-top:$date-border; border-bottom:$date-border;
+}
+
+#{$b}__date-period { font-size:1.6em; }
+
+#{$b}__actions { margin-bottom:6em; }
+#{$b}__go-online {
+    @extend .btn;
+
+    margin-right:5em;
+    background:$btn-online-color;
+    border-top:1px solid lighten($btn-online-color, 5%);
+    border-left:1px solid lighten($btn-online-color, 5%);
+    border-right:1px solid darken($btn-online-color, 5%);
+    border-bottom:1px solid darken($btn-online-color, 5%);
+
+    &:hover, &:active {
+        background:lighten($btn-online-color, 5%);
+        border-top-color:lighten($btn-online-hover-color, 5%);
+        border-left-color:lighten($btn-online-hover-color, 5%);
+        border-right-color:darken($btn-online-hover-color, 5%);
+        border-bottom-color:darken($btn-online-hover-color, 5%);
+    }
+}
+
+a#{$b}__more {
+    @extend .btn;
+
+    color:#ddd;
+    border:1px solid rgba(255,255,255, 0.5);
+    &:hover { color:#fff; border-color:#ddd; }
+}

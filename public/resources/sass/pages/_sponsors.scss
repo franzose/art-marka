@@ -1,0 +1,14 @@
+$sponsors: '.sponsors';
+
+article#{$sponsors} { width:800px; }
+#{$sponsors} + #{$sponsors}-list { margin-top:2em; }
+#{$sponsors}-list { margin-bottom:2em; }
+#{$sponsors}__link {
+    display:inline-block; vertical-align:top;
+    margin-right:1.5em;
+    text-align:center; text-decoration:none;
+    &:hover { text-decoration:underline; }
+}
+
+#{$sponsors}__img { display:block; margin:auto; }
+
